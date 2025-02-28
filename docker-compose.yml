@@ -1,0 +1,12 @@
+version: '3'
+services:
+  wvpfront:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "9090:9090"
+    environment:
+      TZ: "Asia/Shanghai"
+      # [必须修改] 本机的IP
+    # command: [ "sh", "-c", "while true; do sleep 10; done" ]
