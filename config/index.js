@@ -12,18 +12,18 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/debug': {
-        target: 'https://media.wvp.cowarobot.com:18080/',
+        target: 'http://localhost:18080',
         changeOrigin: true,
         pathRewrite: {
           '^/debug': '/'
         }
       },
-      '/static/snap': {
+      '/wvp': {
         target: 'https://media.wvp.cowarobot.com:18080/',
         changeOrigin: true,
-        // pathRewrite: {
-        //   '^/static/snap': '/static/snap'
-        // }
+        pathRewrite: {
+          '^/wvp': '/'
+        }
       },
 
     },
@@ -56,10 +56,10 @@ module.exports = {
 
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, '../../src/main/resources/static/index.html'),
+    index: path.resolve(__dirname, '../dist/index.html'),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../../src/main/resources/static/'),
+    assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: './static',
     assetsPublicPath: '/',
 

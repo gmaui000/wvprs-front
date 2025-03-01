@@ -1,0 +1,11 @@
+version: '3'
+services:
+  wvpfront:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "9090:443"
+    environment:
+      TZ: "Asia/Shanghai"
+    restart: always
